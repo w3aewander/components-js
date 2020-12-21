@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+<meta charset="utf-8">
+<title>Exemplo incrementar decrementar</title>
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuGfJDZl3Oq5tEjxxHuPiituRn3qSAZHuvgQ&usqp=CAU" >
+</head>
+
+<body>
+
+<main>
+   
+  
+	 
+	 <div style="display: flex; justify-content-center">	 
+	   <div style="width:auto; border: 1px solid gray">
+	      <button onclick="decrementar(parentElement.children[1])"> - </button>
+		     <input  type="text" value="0"  onchange="fitToZero(this)" />
+	      <button onclick="incrementar(parentElement.children[1])" > + </button>
+	   </div>	  
+	 </div>
+	 
+	 <div style="display: flex; justify-content-center">	 
+	   <div style="width:auto; border: 1px solid gray">
+	      <button onclick="decrementar(parentElement.children[1])"> - </button>
+		     <input  type="text" value="0"  onchange="fitToZero(this)" />
+	      <button onclick="incrementar(parentElement.children[1])" > + </button>
+	   </div>	  
+	 </div>
+
+	 <div style="display: flex; justify-content-center">	 
+	   <div style="width:auto; border: 1px solid gray">
+	      <button onclick="decrementar(parentElement.children[1])"> - </button>
+		     <input  type="text" value="0" onchange="fitToZero(this)" />
+	      <button onclick="incrementar(parentElement.children[1])" > + </button>
+	   </div>	  
+	 </div>	 
+
+</main>
+
+</body>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function(event){
+
+  
+});
+
+const fitToZero = function(el){
+  console.log(el);
+   if ( el.value <  0 ){
+       el.value =  0 ;
+   }
+};
+
+const incrementar = function(el){
+	 let result = parseInt(el.value) +1;
+	 el.value = result;
+	 fitToZero(el);
+	 
+};
+
+const decrementar = function(el){
+	 let result =  parseInt(el.value) -1 ;	 
+	 el.value = result;
+	 fitToZero(el);
+	
+};
+
+</script>
+
+</html>
